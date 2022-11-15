@@ -101,6 +101,12 @@ const matrixGenerator = (cardValues, size = 4) => {
 
     // Cards
     cards = document.querySelectorAll(".card-container");
+    //I think this code needs to be broken up into a series of functions
+    //Each card has a "state." State just means the current properties of the card.
+    //For example a card is matched or unmatched, that's the state.
+    //So you might want to break this up by having functions like CanFlipCard(), MatchCards(card1, currentCard), IncrementWinCount()
+    //That would make this easier to read.
+    //Also, event bubbling can  be used to put an event listener on the parent and when the cards are clicked you can catch the event then.
     cards.forEach((card) => {
         card.addEventListener("click", () => {
         //If selected card is not matched yet, then only run (i.e. already matched card when clicked will be ignored)
