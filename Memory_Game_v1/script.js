@@ -131,8 +131,7 @@ const matrixGenerator = (cardValues, size = 4) => {
                     if(winCount == Math.floor(cardValues.length/2)) {
                         result.innerHTML = 
                             `<h2>You Won!</h2> 
-                            <h4>Moves: ${movesCount}</h4>
-                            <h4>Time: </h4>`
+                            <h4>Moves: ${movesCount}</h4>`
                         winGame();
                     }
                 } else {
@@ -202,6 +201,7 @@ pauseButton.addEventListener("click", (pauseGame = () => {
     pauseButton.classList.add("hide");
     continueButton.classList.remove("hide");
     newGameButton.classList.remove("hide");
+    clearInterval(interval);
 }));
 
 // Continue Game (from Pause)
